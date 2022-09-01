@@ -11,6 +11,7 @@
         Webboard Login
     </h1>
     <hr>
+    <hr>
     <div align="center">
         เข้าสู่ระบบด้วย 
         <br>
