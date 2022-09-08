@@ -13,12 +13,25 @@
     <hr>
     <hr>
     <div align="center">
+        <?php 
+            if($_POST["login"] == "admin" && $_POST["pwd"] == "ad1234")
+            echo "ยินดีต้อนรับคุณ ADMIN";
+            elseif($_POST["login"] == "member" && $_POST["pwd"] == "mem1234")
+            echo "ยินดีต้อนรับคุณ MEMBER";
+            else
+            echo "ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง";
+        ?>
+    </div>
+    <p align="center">
+        <a href="index.php">กลับไปยังหน้าหลัก</a>
+    </p>
+    <!--<div align="center">
         เข้าสู่ระบบด้วย 
         <br>
         Login = <?php echo $_POST["login"];?>
         <br>
         Passwrod = <?php echo $_POST["pwd"]?>
-    </div>
+    </div>-->
 
 </body>
 </html>

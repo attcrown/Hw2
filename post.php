@@ -12,6 +12,14 @@
     </h1>
     <div style="text-align: center;">
         <?php echo "ต้องการดูกระทู้ " . $_GET["id"];?>
+        <br>
+        <?php
+            if($_GET["id"]%2 == 0){
+                echo "เป็นกระทู้หมายเลขคู่";
+            } else {
+                echo "คี่";
+            }
+        ?>
     </div>
     <table style="border: 2px solid black; width: 30%" align="center">
             <tr><td colspan="2" style="background-color: #6CD;">แสดงความคิดเห็น</td></tr>
@@ -19,7 +27,7 @@
             <tr><td colspan="2" style="text-align: center;"><input type="submit" value="ส่งข้อความ"></td></tr>
     </table>
     <div style="text-align: center;">
-        <p><a href="index.html">กลับไปที่หน้าหลัก</a></p>
+        <p><a href="index.php">กลับไปที่หน้าหลัก</a></p>
     </div>
 </body>
 </html>
