@@ -26,6 +26,12 @@ session_start();
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
+            <?php 
+                if(isset($_SESSION['error'])){
+                    echo "<div class='alert alert-danger'>ชื่อบัญชีหรือรหัสผ่านไม่ถูกต้อง</div>";
+                }
+                unset($_SESSION['error']);
+            ?>
             <div class="card text-dark bg-light">
                 <div class="card-header">เข้าสู่ระบบ</div>
                 <div class="card-body">
