@@ -16,6 +16,24 @@ session_start();
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script>
+        function password_show_hide(){
+            let x = document.getElementById('password');
+            let show_eye = document.getElementById('show_eye');
+            let hide_eye = document.getElementById('hide_eye');
+
+            hide_eye.classList.remove("d-none");
+            if(x.type === "password"){
+                x.type = "text";
+                show_eye.style.display="none";
+                hide_eye.style.display="block";
+            }else{
+                x.type = "password";
+                show_eye.style.display="block";
+                hide_eye.style.display="none";
+            }
+        }
+    </script>
     <title>login</title>
 </head>
 <body>
@@ -37,12 +55,18 @@ session_start();
                 <div class="card-body">
                     <form action="verify.php" method="POST">
                         <div class="form-group mb-3">
-                            <label for="login">Login:</label>
-                            <input type="text" name="login" class="form-control mt-1">
+                            <label for="login" class="form-label">Login:</label>
+                            <input type="text" name="login" class="form-control">
                         </div>
                         <div class="form-group mb-3">
-                            <label for="pwd">Password:</label>
-                            <input type="text" name="pwd" class="form-control mt-1">
+                            <label for="pwd" class="form-label">Password:</label>
+                            <div class="input-group">
+                                <input type="password" name="pwd" class="form-control" id="password">
+                                <span class="input-group-text" onclick="password_show_hide();">
+                                    <i class="bi bi-eye-fill" id="show_eye"></i>
+                                    <i class="bi bi-eye-slash-fill d-none" id="hide_eye"></i>
+                                </span>
+                            </div>
                         </div>
                         <center><button class="btn btn-secondary">Login</button></center>
                     </form>
