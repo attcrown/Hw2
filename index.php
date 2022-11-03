@@ -103,7 +103,7 @@
                     echo "<tr><td>[$row[0]] <a style=text-decoration:none href=post.php?id=$row[1]>$row[2]</a><br>
                     $row[3] - $row[4]</td>";
 
-                    if($_SESSION["role"]=="m"){
+                    if($_SESSION["role"] != ""){
                         echo "<td><a href=delete.php?id=$i class='btn btn-danger btn-sm' onclick='return myFunction();'>
                         <i class='bi bi-trash'></i></a></td>";
                         }
