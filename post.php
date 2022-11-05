@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,8 +71,8 @@
             $resultname = $sqlname->fetch_assoc();
 
             if ($row['post_id'] == $_GET['id']) {
-                echo "<div class='card text-dark bg-white border-primary mt-3'>
-                        <div class='card-header bg-primary text-white'>ความคิดเห็นที่ $num</div>
+                echo "<div class='card text-dark bg-white border-info mt-3'>
+                        <div class='card-header bg-info text-white'>ความคิดเห็นที่ $num</div>
                         <div class='card-body'>$row[content]<br><br>";      
                 if($resultname){
                     echo "$resultname[name] - $row[post_date]</div></div>";
@@ -81,6 +84,11 @@
         ?>
 
         <!-- ช่องแสดงความคิดเห็น -->
+        <?php 
+        if(!isset($_SESSION['id'])){
+        ?>
+        <?php 
+        }else{ ?> 
         <div class="card text-dark bg-white border-success mt-3">
             <div class="card-header bg-success text-white">แสดงความคิดเห็น</div>
             <div class="card-body">
@@ -101,6 +109,7 @@
                 </form>
             </div>
         </div>
+        <?php } ?>
         <div style="text-align: center;" class="mt-3">
             <p><a href="index.php">กลับไปที่หน้าหลัก</a></p>
         </div>
