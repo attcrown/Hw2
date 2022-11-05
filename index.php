@@ -78,9 +78,9 @@
                     type="button" id="dropdown2" data-bs-toggle="dropdown" 
                     aria-labelledby="false">--ทั้งหมด--</button>
                     <ul class="dropdown-menu" aria-labelledby="dropdown2">
-                        <li><a href="#" class="dropdown-item"></a>ทั้งหมด</li>
-                        <li><a href="#" class="dropdown-item"></a>เรื่องเรียน</li>
-                        <li><a href="#" class="dropdown-item"></a>เรื่องทั่วไป</li>
+                        <li><a href="#" class="dropdown-item">ทั้งหมด</a></li>
+                        <li><a href="#" class="dropdown-item">เรื่องเรียน</a></li>
+                        <li><a href="#" class="dropdown-item">เรื่องทั่วไป</a></li>
                     </ul>
                 </span>
             </div>
@@ -103,22 +103,13 @@
                     echo "<tr><td>[$row[0]] <a style=text-decoration:none href=post.php?id=$row[1]>$row[2]</a><br>
                     $row[3] - $row[4]</td>";
 
-                    if($_SESSION["role"] != ""){
-                        echo "<td><a href=delete.php?id=$i class='btn btn-danger btn-sm' onclick='return myFunction();'>
+                    if($_SESSION["role"] == "a"){
+                        echo "<td><a href=delete.php?id=$row[1] class='btn btn-danger btn-sm' onclick='return myFunction();'>
                         <i class='bi bi-trash'></i></a></td>";
                         }
                     }
                     echo "</tr>";
                 $conn=null;
-                // for($i = 1 ;$i <= 10;$i++){
-                //     echo "<tr><td><a href=post.php?id=$i style=text-decoration:none>
-                //     กระทู้ที่ $i</a></td>";
-                //     if($_SESSION["role"]=="a"){
-                //         echo "<td><a href=delete.php?id=$i class='btn btn-danger btn-sm' onclick='return myFunction();'>
-                //         <i class='bi bi-trash'></i></a></td>";
-                //     }
-                // }
-                // echo "</tr>";
             ?>
         </table>
         </div>
